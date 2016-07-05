@@ -1,0 +1,24 @@
+{
+  "name": "bfx",
+  "description": "Bid database extra API",
+  "main": "index.js",
+  "authors": [
+    "Benjamin Bancroft"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "express",
+    "node",
+    "mysql",
+    "api"
+  ],
+  "homepage": "https://github.com/benbgl/bfx",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

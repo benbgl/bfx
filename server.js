@@ -4,7 +4,16 @@ var express = require('express'),
     bodyParser = require('body-parser'),
     morgan = require('morgan'),
     logger = require('winston'),
+    mysql = require('mysql'),
+    myConnection = require('express-myconnection'),
     app = null,
+    dbOptions = {
+      host: 'localhost',
+      user: 'support',
+      password: 'orbit618nation',
+      port: 3306,
+      database: 'z_bidform'
+    },
     start = function(cb) {
       'use strict';
 
@@ -27,6 +36,8 @@ var express = require('express'),
         });
         next(err);
       });
+
+      app.use(myConnection(mysql, dbOptions, 'pool'));
 
       app.listen(config.get('NODE_PORT'));
       logger.info('[SERVER] Listening on port ' + config.get('NODE_PORT'));
